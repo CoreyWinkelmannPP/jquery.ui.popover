@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>jQuery UI popover</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/dark-hive/jquery-ui-1.8.9.custom.css" />
+		<link rel="stylesheet" type="text/css" href="css/ui.popover.css" />
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			h1 {
+				font-size: 18px;
+				margin-left: 20px;
+			}
+			nav ul {
+				margin: 10px;
+				padding: 10px;
+			}
+			nav li.item-bottom, nav li.item-top {
+				float: left;
+				margin-right: 10px;
+				list-style-type: none;
+			}
+			nav li.item-right {
+				width: 83px;
+				margin-right: 10px;
+				list-style-type: none;
+			}
+			nav.right {
+				float: right;
+			}
+			nav li.item-left {
+				width: 83px;
+				margin-right: 10px;
+				list-style-type: none;
+			}
+			.clear {
+				clear: both;
+				height: 0;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<h1>PopOver Container (Position: Bottom)</h1>
+		<nav>
+			<ul>
+				<li class="item item-bottom"><a href="#">Item 1</a></li>
+				<li class="item item-bottom"><a href="#">Item 2</a></li>
+				<li class="item item-bottom"><a href="#">Item 3</a></li>
+				<li class="item item-bottom"><a href="#">Item 4</a></li>
+			</ul>
+			<div class="clear"></div>
+		</nav>
+
+		<br />
+		<br />
+		<h1>PopOver Container (Position: right)</h1>
+		<nav>
+			<ul>
+				<li class="item item-right"><a href="#">Item 1</a></li>
+				<li class="item item-right"><a href="#">Item 2</a></li>
+				<li class="item item-right"><a href="#">Item 3</a></li>
+				<li class="item item-right"><a href="#">Item 4</a></li>
+			</ul>
+		</nav>
+
+		<br />
+		<br />
+		<h1>PopOver Container (Position: left)</h1>
+		<nav class="right">
+			<ul>
+				<li class="item item-left"><a href="#">Item 1</a></li>
+				<li class="item item-left"><a href="#">Item 2</a></li>
+				<li class="item item-left"><a href="#">Item 3</a></li>
+				<li class="item item-left"><a href="#">Item 4</a></li>
+			</ul>
+		</nav>
+		<div class="clear"></div>
+
+		<br />
+		<br />
+		<h1>PopOver Container (Position: top)</h1>
+		<nav>
+			<ul>
+				<li class="item item-top"><a href="#">Item 1</a></li>
+				<li class="item item-top"><a href="#">Item 2</a></li>
+				<li class="item item-top"><a href="#">Item 3</a></li>
+				<li class="item item-top"><a href="#">Item 4</a></li>
+			</ul>
+			<div class="clear"></div>
+		</nav>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.subclass.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.popover.container.js"></script>
+		<script type="text/javascript">
+			$('nav li a').button();
+			$('.item-bottom').popoverContainer({
+				container : {
+					position : 'bottom'
+				}
+			});
+			$('.item-right').popoverContainer({
+				container : {
+					position : 'right'
+				}
+			});
+			$('.item-left').popoverContainer({
+				container : {
+					position : 'left'
+				}
+			});
+			$('.item-top').popoverContainer({
+				container : {
+					position : 'top'
+				}
+			});
+		</script>
+	</body>
+</html>
