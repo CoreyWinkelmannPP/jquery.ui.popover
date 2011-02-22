@@ -116,4 +116,4 @@ $.ui.widget.subclass = function subclass(name){
 		break;
 	}
 };
-})(jQuery)
+})(jQuery);
