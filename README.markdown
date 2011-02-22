@@ -5,3 +5,4 @@ This plugin will function similar to an iPad menu. An arrow pointing to the acti
 
 ### Plugins
 * jquery.popover.container.js
+* jquery.popover.js
