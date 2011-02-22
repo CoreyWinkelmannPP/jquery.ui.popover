@@ -64,13 +64,13 @@
 						collision : 'fit none',
 						using : function(position) {
 							if ( position.left <= 0 ) {
-								$(this).offset({'top' : position.top, 'left' : position.left + 10});
+								$(this).css({'top' : position.top, 'left' : position.left + 10});
 							}
 							else if ( (position.left + container.outerWidth()) >= $(window).width() ) {
-								$(this).offset({'top' : position.top, 'left' : position.left - 10});
+								$(this).css({'top' : position.top, 'left' : position.left - 10});
 							}
 							else {
-								$(this).offset({'top' : position.top, 'left' : position.left});
+								$(this).css({'top' : position.top, 'left' : position.left});
 							}
 						}
 					});
@@ -84,13 +84,13 @@
 						collision : 'none fit',
 						using : function(position) {
 							if ( position.top <= 0 ) {
-								$(this).offset({'top' : position.top + 10, 'left' : position.left });
+								$(this).css({'top' : position.top + 10, 'left' : position.left });
 							}
 							else if ( (position.top + container.outerHeight()) >= $(window).height() ) {
-								$(this).offset({'top' : position.top - 10, 'left' : position.left});
+								$(this).css({'top' : position.top - 10, 'left' : position.left});
 							}
 							else {
-								$(this).offset({'top' : position.top, 'left' : position.left});
+								$(this).css({'top' : position.top, 'left' : position.left});
 							}
 						}
 					});
@@ -104,13 +104,13 @@
 						collision : 'none fit',
 						using : function(position) {
 							if ( position.top <= 0 ) {
-								$(this).offset({'top' : position.top + 10, 'left' : position.left });
+								$(this).css({'top' : position.top + 10, 'left' : position.left });
 							}
 							else if ( (position.top + container.outerHeight()) >= $(window).height() ) {
-								$(this).offset({'top' : position.top - 10, 'left' : position.left});
+								$(this).css({'top' : position.top - 10, 'left' : position.left});
 							}
 							else {
-								$(this).offset({'top' : position.top, 'left' : position.left});
+								$(this).css({'top' : position.top, 'left' : position.left});
 							}
 						}
 					});
@@ -123,14 +123,17 @@
 						offset : '0 18',
 						collision : 'fit none',
 						using : function(position) {
+							var elOffset = el.offset();
+							var newPositionLeft = (el.width()/2) + elOffset.left;
+							var newPositionTop = (el.height()) + elOffset.top;
 							if ( position.left <= 0 ) {
-								$(this).offset({'top' : position.top, 'left' : position.left + 10});
+								$(this).css({'top' : position.top, 'left' : position.left + 10});
 							}
 							else if ( (position.left + container.outerWidth()) >= $(window).width() ) {
-								$(this).offset({'top' : position.top, 'left' : position.left - 10});
+								$(this).css({'top' : position.top, 'left' : position.left - 10});
 							}
 							else {
-								$(this).offset({'top' : position.top, 'left' : position.left});
+								$(this).css({'top' : position.top, 'left' : position.left});
 							}
 						}
 					});
@@ -158,7 +161,7 @@
 								at : 'top',
 								of : el,
 								using : function( elPosition ) {
-									$(this).offset({ 'top' : position.top, 'left' : elPosition.left });
+									$(this).css({ 'top' : position.top, 'left' : elPosition.left });
 								}
 							});
 						}
@@ -175,7 +178,7 @@
 								at : 'right',
 								of : el,
 								using : function( elPosition ) {
-									$(this).offset({ 'top' : elPosition.top, 'left' : position.left });
+									$(this).css({ 'top' : elPosition.top, 'left' : position.left });
 								}
 							});
 						}
@@ -192,7 +195,7 @@
 								at : 'left',
 								of : el,
 								using : function( elPosition ) {
-									$(this).offset({ 'top' : elPosition.top, 'left' : position.left });
+									$(this).css({ 'top' : elPosition.top, 'left' : position.left });
 								}
 							});
 						}
@@ -209,7 +212,7 @@
 								at : 'bottom',
 								of : el,
 								using : function( elPosition ) {
-									$(this).offset({ 'top' : position.top, 'left' : elPosition.left });
+									$(this).css({ 'top' : position.top, 'left' : elPosition.left });
 								}
 							});
 						}
@@ -218,10 +221,10 @@
 			}
 		},
 		_showContainer : function() {
-			this._positionContainer();
 			this.container.stop(true, true).fadeIn('fast');
-			this._positionTriangle();
+			this._positionContainer();
 			this.triangle.stop(true, true).fadeIn('fast');
+			this._positionTriangle();
 			this.element.addClass('ui-popover-list-item-active');
 
 			this._isOpen = true;
